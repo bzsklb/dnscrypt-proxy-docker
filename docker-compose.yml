@@ -1,0 +1,14 @@
+dnscrypt-proxy:
+    image: bzsklb/dnscrypt-proxy-docker
+    ports:
+        - "5353:53/udp"
+        - "5353:53/tcp"
+    environment:
+        - USER=nobody
+        - LOCAL_IP=0.0.0.0
+        - LOCAL_PORT=53
+        - RESOLVER_IP=84.16.240.43
+        - RESOLVER_PORT=443
+        - PROVIDER_NAME=2.dnscrypt-cert.cryptostorm.is
+        - PROVIDER_KEY=3133:72AD:5956:32C2:416B:872F:098F:851B:DDB9:6528:4C6C:BE9A:4F19:0964:30DB:A95A
+    restart: always
